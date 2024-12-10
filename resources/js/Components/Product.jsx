@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 
-export default function Product({data}) {
+const Product = forwardRef(({ data }, ref) => {
     const [name, setName] = useState(data.name ?? '');
     const [description, setDescription] = useState(data.description ?? '');
     const [price, setPrice] = useState(data.price ?? '');
@@ -13,7 +13,7 @@ export default function Product({data}) {
     };
 
     return (
-        <div className="bg-white shadow-lg rounded-lg flex flex-col border border-gray-200 hover:shadow-xl transition-all duration-150 hover:scale-[1.01] h-full">
+        <div ref={ref} className="bg-white shadow-lg rounded-lg flex flex-col border border-gray-200 hover:shadow-xl transition-all duration-150 hover:scale-[1.01] h-full">
             <img src={image} alt={name} className="w-full aspect-square object-cover rounded"/>
             <div className="flex flex-col gap-4 p-4">
                 <div className="flex flex-col gap-1">
@@ -37,4 +37,6 @@ export default function Product({data}) {
             </div>
         </div>
     );
-}
+});
+
+export default Product;
