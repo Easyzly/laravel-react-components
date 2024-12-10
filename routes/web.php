@@ -28,39 +28,13 @@ Route::middleware('auth')->group(function () {
 Route::get('notifications-dropdown', [\App\Http\Controllers\NotificationsDropdownController::class, 'index'])->name('notifications-dropdown.index');
 Route::get('notifications-dropdown/data', [\App\Http\Controllers\NotificationsDropdownController::class, 'data'])->name('notifications-dropdown.data');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Pricing Sections
 Route::get('pricing-table', [\App\Http\Controllers\PricingTableController::class, 'index'])->name('pricing-table.index');
 Route::get('pricing-table/data', [\App\Http\Controllers\PricingTableController::class, 'data'])->name('pricing-table.data');
 
-
-
+//Product Widgets
+Route::get('product-widgets', [\App\Http\Controllers\ProductWidgetsController::class, 'index'])->name('product-widgets.index');
+Route::get('product-widgets/data', [\App\Http\Controllers\ProductWidgetsController::class, 'data'])->name('product-widgets.data');
 
 
 
